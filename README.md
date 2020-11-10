@@ -135,3 +135,14 @@ analyze the output with below commands:
 `find /tmp/tcpsessions_from_pcap -name "*.js" | wc -l`
 
 `find /tmp/tcpsessions_from_pcap -name "*.json" | wc -l`
+
+
+#### Testing
+
+Tests are in the `test` directory. To run all the tests do `pytest test` from the source code
+directory.
+
+To see the code coverage:
+
+    coverage run -m pytest test
+    coverage report -m tcpsession/TCPsession.py
