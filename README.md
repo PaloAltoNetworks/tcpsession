@@ -58,9 +58,26 @@ we have no obligation to deliver the data to application, we just need to extrac
 
 
 ##### Usage:
-Example of usage could be found in `tcpsessions_from_pcap.py` script, which also generates `tcpsessions_from_pcap.log`
-file. It also has option of doing performance testing. Additionally, it provides an option to extract
-JS from TCP sessions. 
+###### Installation:
+Clone the repository then install the requirements with `pip install -r requirements.txt`. 
+
+To install the library do `python3 setup.py install`.
+
+If you want to use the script `tcpsessions_from_pcap.py` then you will need to install
+ `wireshark` (tshark) and `tcpflow` as well.
+
+
+To simply extract sessions from a pcap once `TCPSession` is in your python path:
+
+    import TCPSessions
+    pcap = "your.pcap"
+    tcpsessions = TCPSessions(pcap)
+    tcpsessions.process_pcap()
+    tcpsessinos.dump_all_sessions("your_output_dir")
+
+Example of usage could also be found in `tcpsessions_from_pcap.py` script, which also generates
+ `tcpsessions_from_pcap.log` file. It also has option of doing performance testing. Additionally, 
+ it provides an option to extract JS from TCP sessions. 
 
 This library requires Python3.
 Before using the script to extract sessions from pcap, please install the requirements with
@@ -69,8 +86,7 @@ script are following:
 
 ###### Single pcap session extraction:
   
-    mkdir /tmp/tcpsessions_from_pcap && \ 
-    python3 tcpsessions_from_pcap.py -p data/big-920-sessions.pcap -o /tmp/tcpsessions_from_pcap
+    mkdir /tmp/tcpsessions_from_pcap && python3 tcpsessions_from_pcap.py -p data/big-920-sessions.pcap -o /tmp/tcpsessions_from_pcap
 
 Check number of JSON file, one for each session, created:
 

@@ -7,7 +7,7 @@ import random
 import os
 import binascii
 import shutil
-from tcpsession import *
+from tcpsession.tcpsession import *
 
 s_mac = b"\x00\x86\x9c\xcb\x29\x44"
 d_mac = b"\x02\x1a\xc5\x01\x14\xb5"
@@ -1622,12 +1622,12 @@ def test_tcp_with_options_termination_client_with_stale_fin(debug=False):
             *) there will be a case when rcv_next = tcp.seq and one will be where it not
         2) rcv_next and window_right_end wraps around, and tcp.seq + len(tcp.payload) overlaps with the window
             *) there will be 3 edge case, payload before, at the end and after the end of window
-        Above two tests are tested in: test_tcp_with_options_wrap_around_cases() 
+        Above two tests are tested in: test_tcp_with_options_wrap_around_cases()
         3) when tcp.seq in rwnd, and it fills a hole in the window -- basically tests the 1st case but from waiting
             queue
         above test is tested in test_tcp_with_options_wraparound_handshake()
 """
-""" Test case for when FIN PKT/ACK is delivered early, 
+""" Test case for when FIN PKT/ACK is delivered early,
         *) When both the peers are in ESTABLISHED state - 2 cases
         *) When one is in FIN_WAIT_1 - 2 cases for both sides
             *) Transition to FIN_WAIT_2
@@ -1637,7 +1637,7 @@ def test_tcp_with_options_termination_client_with_stale_fin(debug=False):
 """
 """ Test cases that needs to be tested, from each side of peer, can be combined with wrap around window case
     *) FIN with stale seq number
-        *) Standalone FIN (covered in test_tcp_with_options_wraparound_4_way_termination(), 
+        *) Standalone FIN (covered in test_tcp_with_options_wraparound_4_way_termination(),
                             and test_tcp_with_options_wraparound_4_way_s_termination())
         *) Piggy-backed FIN
     *) FIN ACK with stale seq number

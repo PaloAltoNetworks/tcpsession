@@ -1,21 +1,17 @@
-#from scapy.utils import rdpcap
-#from scapy.layers.inet import TCP
-#from scapy.layers.inet import IP
 import socket
 import struct
 import subprocess
-from tcpsession import TCPSessions, NetworkTuple
-from datetime import datetime
 import timeit
 import glob
 import json
 import os
-from hashlib import md5, sha256
 import argparse
 import logging
 import shutil
 import tarfile
-#import inspect
+from tcpsession.tcpsession import TCPSessions, NetworkTuple
+from datetime import datetime
+from hashlib import md5, sha256
 LOG_FORMAT_STRING = '%(asctime)s %(levelname)-8s %(filename)s %(lineno)d %(message)s'
 LOG_DATEFMT = '%Y-%m-%d %H:%M:%S'
 EMPTY_FILE_MD5_SUM = "d41d8cd98f00b204e9800998ecf8427e"
