@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "sip": {
+      "type": "string"
+    },
+    "dip": {
+      "type": "string"
+    },
+    "sport": {
+      "type": "integer"
+    },
+    "dport": {
+      "type": "integer"
+    },
+    "proto": {
+      "type": "integer"
+    },
+    "tcp_payload_hex": {
+      "type": "array",
+      "items": [
+        {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    "tcp_ordered_hex_payload_md5sum": {
+      "type": "string"
+    },
+    "tcp_payload_ascii": {
+      "type": "array",
+      "items": [
+        {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    "tcp_ordered_payload_md5sum": {
+      "type": "string"
+    },
+    "combined_src_payload": {
+      "type": "string"
+    },
+    "combined_src_payload_md5sum": {
+      "type": "string"
+    },
+    "combined_dst_payload": {
+      "type": "string"
+    },
+    "combined_dst_payload_md5sum": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "sip",
+    "dip",
+    "sport",
+    "dport",
+    "proto",
+    "tcp_payload_hex",
+    "tcp_ordered_hex_payload_md5sum",
+    "tcp_payload_ascii",
+    "tcp_ordered_payload_md5sum",
+    "combined_src_payload",
+    "combined_src_payload_md5sum",
+    "combined_dst_payload",
+    "combined_dst_payload_md5sum"
+  ]
+}
